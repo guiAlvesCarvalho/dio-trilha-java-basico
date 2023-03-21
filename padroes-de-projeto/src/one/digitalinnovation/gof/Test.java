@@ -1,6 +1,9 @@
 package one.digitalinnovation.gof;
 
 import one.digitalinnovation.gof.facade.Facade;
+import one.digitalinnovation.gof.factory.Country;
+import one.digitalinnovation.gof.factory.Currency;
+import one.digitalinnovation.gof.factory.CurrencyFactory;
 import one.digitalinnovation.gof.singleton.SingletonEager;
 import one.digitalinnovation.gof.singleton.SingletonLazy;
 import one.digitalinnovation.gof.singleton.SingletonLazyHolder;
@@ -44,5 +47,9 @@ public class Test {
 
         Facade facade = new Facade();
         facade.migrarCliente("Guilherme", "198000-000");
+
+        //Factory
+        Currency currency = CurrencyFactory.newCurrency(Country.BRAZIL);
+        System.out.println(currency.getSymbol());
     }
 }
